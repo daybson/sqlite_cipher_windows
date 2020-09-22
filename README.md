@@ -62,10 +62,10 @@ Then I made a separeted folder with my orignial sqlite database unencripted, and
     
     echo
     echo "Copying to Flutter project"
-    rm C:/app_mobile/assets/databases/myDatabase.db
+    #rm C:/app_mobile/assets/databases/original_database.db
     
-    cp encrypted.db C:/app_mobile/assets/databases/myDatabase.db
-    rm myDatabase.db
+    cp encrypted.db C:/app_mobile/assets/databases/original_database.db
+    #rm original_database.db
     
     echo "Done."
 
