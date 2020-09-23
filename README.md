@@ -24,7 +24,7 @@ Change
 to
 `TCC = $(TCC) -DSQLITE_TEMP_STORE=2 -DSQLITE_HAS_CODEC -I"C:\Program Files\OpenSSL-Win64\include"`
 
-Search for `LTLIBS = $(LTLIBS) $(LIBICU)` and insert at the tag `"# <</mark>>"`  the code:
+Search for `LTLIBS = $(LTLIBS) $(LIBICU)` and insert atfer the tag `"# <</mark>>"`  the code:
 
     LTLIBPATHS = $(LTLIBPATHS) /LIBPATH:"C:\Program Files\OpenSSL-Win64\lib\VC\static"
     LTLIBS = $(LTLIBS) libcrypto64MT.lib libssl64MT.lib ws2_32.lib shell32.lib advapi32.lib gdi32.lib user32.lib crypt32.lib
