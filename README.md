@@ -31,21 +31,20 @@ Search for `LTLIBS = $(LTLIBS) $(LIBICU)` and insert atfer the tag `"# <</mark>>
 
 ## Step 5
 Open  x64 Native Tools Command Prompt from Vs 2019 (Start menu / Visual Studio  2019);
-Navigate to where you clone the sqlcipher repository. In my case:
-cd C:\Repositorios\sqlitecipher
-Compile the file Makefile typing the command:
+Navigate to where you clone the sqlcipher repository. In my case: cd C:\Repositorios\sqlitecipher
+Then compile the file Makefile typing the command:
 `nmake /f Makefile.msc`
 
 ## Step 6 (if you got an error on Step 5)
 When I try to compile on Windows 10 using  x64 Native Tools Command Prompt from Vs 2019 (`nmake /f Makefile.msc`) , I've got an error of missing `stdio.h`.
 
-So I had to download the Wnidows 10 SDK usign Visual Studio Installer.
+So I had to download the Wnidows 10 SDK usign Visual Studio Installer. Close the console and open it again after installation finishes. Then try to compile again.
 
 ## Step 7: Verify
-After finish the compilation, it will be generated an 'sqlite3.exe' file inside the folder. On the same command prompt, run 'sqlite3.exe' and see if the message SQLCipher Version XXXXX Connected to in memory transient database' appears.
+After finish the compilation, it will be generated an 'sqlite3.exe' file inside the folder. On the same command prompt, run 'sqlite3.exe' and see if the message "SQLCipher Version XXXXX Connected to in memory transient database" appears.
 
 ## Step 8: 
-After compilation , I added the path of sqlite3.exe to PATH environment system PATH.
+After compilation, I added the path of sqlite3.exe to PATH environment system PATH.
 
 ## Step 9: Bash Script
 Then I made a separeted folder with my orignial sqlite database unencripted, and used this bash script from @davidmartos96 to convert the original database into a encrypted one.
@@ -79,8 +78,8 @@ Then, I used Git Bash (inside the same folder where bash_build.sh is located) to
 
 ## Conclusion
 I'm not expert on bash script or encryption, but I got this working with some help.
-I've tested the encripted file on Android Emulator and physical devices using Flutter and  sqflite_sqlcipher package, and works fine. 
-If I pass a wrong password or any password at all, my app is not able to read the database.
+I've tested the encripted file on Android Emulator and iPhone Simulator , and a Android physical devices using Flutter and sqflite_sqlcipher package, and works fine. 
+If I pass a wrong password or don't pass any password at all, my app is not able to read the database. It only read the data when I pass the correct key.
 
 If you want to open your encrypted sqlite file on Windows, download a version of SQLiteBrowser https://github.com/sqlitebrowser/sqlitebrowser/releases.
 
